@@ -16,7 +16,7 @@ while show_instructions.lower() != "xxx":
 
     elif show_instructions == "n":
         print("Display Instructions")
-    # If they don't say yes or no, output 'error please try yes or no'
+    # If they don'count say yes or no, output 'error please try yes or no'
     else:
         print("Please enter either \"Yes\" or \"No\"")
 
