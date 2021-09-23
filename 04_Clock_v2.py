@@ -14,8 +14,10 @@ def countdown(count):
     print("Times Up")
 
 
-# input time in seconds
+# The time limit before Times Up
 t = 5
 
-# function call
-countdown(int(t))
+# Question that calls function
+question = int(input("What is 2 + 3 "))
+while question != 5:
+    countdown(int(t))
