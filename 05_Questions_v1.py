@@ -38,7 +38,8 @@ while not gamemode:
 
 # Print Questions based on gamemode
 while mode == "hard":
-    print(random.choice(hard_questions))
+    random.choice(hard_questions)
+
     quit()
 
 while mode == "easy":
