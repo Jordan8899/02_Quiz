@@ -18,20 +18,33 @@ easy_answers = ["a", "b", "c", "d", "e", "f", "g", "h"]
 timed_answers = ["a", "b", "c", "d", "e", "f", "g", "h"]
 
 # Gamemode selection
-gamemode = input("Gamemode? ")
-gamemode = gamemode.strip().lower()
+gamemode = False
+while not gamemode:
+    gamemode = input("Gamemode? ")
+    gamemode = gamemode.strip().lower()
+    if gamemode == "hard":
+        mode = "hard"
+        gamemode = True
+    elif gamemode == "easy":
+        gamemode = True
+        mode = "easy"
+    elif gamemode == "timed":
+        gamemode = True
+        mode = "timed"
+    else:
+        print("Please input")
+        gamemode = False
+
 
 # Print Questions based on gamemode
-if gamemode == "hard":
+while mode == "hard":
     print(random.choice(hard_questions))
+    quit()
 
-
-elif gamemode == "easy":
+while mode == "easy":
     print(random.choice(easy_questions))
+    quit()
 
-
-elif gamemode == "timed":
+while mode == "timed":
     print(random.choice(timed_questions))
-
-else:
-    print("Error please input 'hard', 'easy', 'timed'")
+    quit()
