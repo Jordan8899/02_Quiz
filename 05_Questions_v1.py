@@ -26,9 +26,12 @@ if gamemode == "hard":
     print(random.choice(hard_questions))
 
 
-if gamemode == "easy":
+elif gamemode == "easy":
     print(random.choice(easy_questions))
 
 
-if gamemode == "timed":
+elif gamemode == "timed":
     print(random.choice(timed_questions))
+
+else:
+    print("Error please input 'hard', 'easy', 'timed'")
