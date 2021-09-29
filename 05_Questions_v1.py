@@ -1,43 +1,42 @@
 import random
+
 # Hard Questions
-hard_questions = ["a", "b", "c", "d", "e", "f", "g", "h"]
+hard_questions = ["1", "2", "3", "4", "5", "6", "7", "8"]
 
 # Easy Questions
-easy_questions = ["a", "b", "c", "d", "e", "f", "g", "h"]
+easy_questions = ["1", "2", "3", "4", "5", "6", "7", "8"]
 
 # Timed Questions
-timed_questions = ["a", "b", "c", "d", "e", "f", "g", "h"]
+timed_questions = ["1", "2", "3", "4", "5", "6", "7", "8"]
 
 # Hard Answers
-hard_answers = ["a", "b", "c", "d", "e", "f", "g", "h"]
+hard_answers = ["1", "2", "3", "4", "5", "6", "7", "8"]
 
 # Easy Answers
-easy_answers = ["a", "b", "c", "d", "e", "f", "g", "h"]
+easy_answers = ["1", "2", "3", "4", "5", "6", "7", "8"]
 
 # Timed Answers
-timed_answers = ["a", "b", "c", "d", "e", "f", "g", "h"]
+timed_answers = ["1", "2", "3", "4", "5", "6", "7", "8"]
 
 # Gamemode selection
-gamemode = False
-while not gamemode:
+i = False
+while not i:
     gamemode = input("Gamemode? ")
     gamemode = gamemode.strip().lower()
     if gamemode == "hard":
-        mode = "hard"
-        gamemode = True
+        gamemode = "hard"
+        i = True
     elif gamemode == "easy":
-        gamemode = True
-        mode = "easy"
+        i = True
     elif gamemode == "timed":
-        gamemode = True
-        mode = "timed"
+        i = True
     else:
         print("Please input")
-        gamemode = False
+        i = False
 
 
 # Print Questions based on gamemode
-if mode == "hard":
+while gamemode == "hard":
     question = random.choice(hard_questions)
     if question == hard_questions[0]:
         print(hard_answers[0])
@@ -45,59 +44,70 @@ if mode == "hard":
         del hard_questions[0]
         del hard_answers[0]
         question = random.choice(hard_questions)
+
     elif question == hard_questions[1]:
         print(hard_answers[1])
         print(hard_answers[1])
         del hard_questions[1]
         del hard_answers[1]
         question = random.choice(hard_questions)
+
     elif question == hard_questions[2]:
         print(hard_answers[2])
         print(hard_answers[2])
         del hard_questions[2]
         del hard_answers[2]
         question = random.choice(hard_questions)
+
     elif question == hard_questions[3]:
         print(hard_answers[3])
         print(hard_answers[3])
         del hard_questions[3]
         del hard_answers[3]
         question = random.choice(hard_questions)
+
     elif question == hard_questions[4]:
         print(hard_answers[4])
         print(hard_answers[4])
         del hard_questions[4]
         del hard_answers[4]
         question = random.choice(hard_questions)
+
     elif question == hard_questions[5]:
         print(hard_answers[5])
         print(hard_answers[5])
         del hard_questions[5]
         del hard_answers[5]
         question = random.choice(hard_questions)
+
     elif question == hard_questions[6]:
         print(hard_answers[6])
         print(hard_answers[6])
         del hard_questions[6]
         del hard_answers[6]
         question = random.choice(hard_questions)
+
     elif question == hard_questions[7]:
         print(hard_answers[7])
         print(hard_answers[7])
         del hard_questions[7]
         del hard_answers[7]
         question = random.choice(hard_questions)
+
     elif question == hard_questions[8]:
         print(hard_answers[8])
         print(hard_answers[8])
         del hard_questions[8]
         del hard_answers[8]
         question = random.choice(hard_questions)
+    else:
+        print("Fixed")
+        quit()
 
-elif mode == "easy":
+while gamemode == "easy":
     print(random.choice(easy_questions))
     quit()
 
-elif mode == "timed":
+while gamemode == "timed":
     print(random.choice(timed_questions))
     quit()
