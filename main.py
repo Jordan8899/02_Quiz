@@ -1,13 +1,15 @@
-gamemode = False
-while not gamemode:
-    gamemode = input("Gamemode? ")
-    gamemode = gamemode.strip().lower()
-    if gamemode == "hard":
-        gamemode = True
-    elif gamemode == "easy":
-        gamemode = True
-    elif gamemode == "timed":
-        gamemode = True
-    else:
-        print("Please input")
-        gamemode = False
+import random
+
+question = ["1", "2"]
+x = random.randint(0, 1)
+while question:
+    print(question[x])
+
+    if question[x] == question[0]:
+        print("Question 1")
+        del question[x]
+        x = random.randint(0, 1)
+
+    elif question[x] == question[1]:
+        print("Question 2")
+        x = random.randint(0, 1)
