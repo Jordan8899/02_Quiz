@@ -1,15 +1,12 @@
 import random
 
-question = ["1", "2"]
-x = random.randint(0, 1)
-while question:
-    print(question[x])
+def question():
+    questions = ["1", "2"]
+    asked = []
+    x = random.randint(0, 1)
+    if questions[x] not in asked:
+        print(questions[x])
+    else:
+        return
 
-    if question[x] == question[0]:
-        print("Question 1")
-        del question[x]
-        x = random.randint(0, 1)
-
-    elif question[x] == question[1]:
-        print("Question 2")
-        x = random.randint(0, 1)
+question()
