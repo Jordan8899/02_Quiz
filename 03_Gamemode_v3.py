@@ -1,26 +1,19 @@
 
-# List of game modes
-print("This quiz has multiple gamemode having: 'timed', 'difficult', 'easy'")
-
 # Select Game Mode
 def gamemode():
-    i = True
-    while i:
-        gamemode_selection = input("What gamemode would you like to select? ")
-
-        if gamemode_selection == "timed":
-            print("You have selected the timed gamemode")
-            i = False
-
-        elif gamemode_selection == "difficult":
-            print("You have selected the difficult gamemode")
-            i = False
-
-        elif gamemode_selection == "easy":
-            print("You have selected the easy gamemode")
-            i = False
-
+    i = False
+    while not i:
+        gamemode_user = input("What gamemode would you like to select, 'hard' or 'easy'? ")
+        gamemode_user = gamemode_user.strip().lower()
+        if gamemode_user == "hard":
+            i = True
+        elif gamemode_user == "easy":
+            i = True
         else:
-            print("Please select one of the following gamemodes: 'timed' 'difficult' 'easy'")
-
+            print("Please input")
+            i = False
 gamemode()
+
+print(gamemode)
+
+# This is broken use the 05_Questions_v2 instead
