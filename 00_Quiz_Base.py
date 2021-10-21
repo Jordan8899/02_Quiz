@@ -1,6 +1,6 @@
 import random
 score = 0
-
+round_number = 1
 # Functions go here...
 def yes_no(question):
     valid = False
