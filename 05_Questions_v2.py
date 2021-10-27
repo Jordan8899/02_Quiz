@@ -13,6 +13,16 @@ hard_questions = ["What is the motto of Hogwarts school for witchcraft and wizar
                   "What secret character is in the films including fantastic beasts?\n",
                   "What material were the brooms made out of in real life (3 words)?\n"]
 
+# Normal Questions
+normal_questions = ["What creatures (plural) forged the Gryffindor sword?\n",
+                    "What horcrux is related to the Ravenclaw house?\n",
+                    "What did they change Philosopher to in the American version of Harry Potter and the Philosopher’s stone?\n",
+                    "What is the name of the main character in Fantastic Beasts and where to find them?\n",
+                    "What does Lord Voldermort want to rid the world of?\n",
+                    "What position did Harry Potter play in Quidditch?\n",
+                    "What position does Ginny Weasley play in Quidditch?\n",
+                    "How many times did Gryffindor win the House Cup throughout the books?\n"]
+
 # Easy Questions
 easy_questions = ["What is the name of the spell that gave Harry Potter the scar on his forehead?\n",
                   "What house did Harry Potter get sorted into?\n",
@@ -33,6 +43,15 @@ hard_answers = ["Never tickle a sleeping dragon",
                 "Ginger Witch",
                 "Airplane grade titanium"]
 
+# Normal Answers
+normal_answers = ["Goblins",
+                  "Diadem",
+                  "Sorcerer",
+                  "Newt Scamander",
+                  "Muggles",
+                  "Seeker",
+                  "Chaser",
+                  "1"]
 # Easy Answers
 easy_answers = ["Avada Kedavra",
                 "Gryffindor",
@@ -46,15 +65,16 @@ easy_answers = ["Avada Kedavra",
 # Gamemode selection
 i = False
 while not i:
-    gamemode = input("Gamemode? ")
+    gamemode = input("What gamemode would you like to select? ")
     gamemode = gamemode.strip().lower()
     if gamemode == "hard":
-        gamemode = "hard"
         i = True
     elif gamemode == "easy":
         i = True
+    elif gamemode == "normal":
+        i = True
     else:
-        print("Please input")
+        print("Please input either 'easy', 'normal', or 'hard'")
         i = False
 
 # Question Selection
@@ -62,6 +82,11 @@ if gamemode == "hard":
     questions = hard_questions
     answers = hard_answers
     printed_answer = hard_answers
+
+elif gamemode == "normal":
+    questions = normal_questions
+    answers = normal_answers
+    printed_answer = normal_answers
 
 elif gamemode == "easy":
     questions = easy_questions
@@ -81,7 +106,7 @@ while len(questions) > 0:
     randomized = randomizer()
     guess = input(randomized[0])
     guess = guess.replace(" ", "").lower()
-    if guess == randomized[1]:
+    if guess == randomized[1].lower().replace(" ", ""):
         print("Correct\n")
         score += 1
     elif guess != randomized[1]:
@@ -93,11 +118,14 @@ while len(questions) > 0:
 # Based Response depending on gamemode
 if gamemode == "easy":
     true_wizard = "You have been accepted to join Hogwarts school for witchcraft and wizardry"
+elif gamemode == "normal":
+    true_wizard = "You are as legendary as Harry Potter"
 elif gamemode == "hard":
     true_wizard = "You are a true legendary master of magic"
+
 # Score and gamemode based response to how well the user performed in the quiz
 if score == 8:
     print("\nCongratulations you got a perfect score {} out of 8 on {} mode. {}".format(score, gamemode, true_wizard))
 
 else:
-    print("\nYou got {} out of 8 on the {} difficulty. You did well".format(score, gamemode))
+    print("\nYou got {} out of 8 on the {} difficulty. You did magical".format(score, gamemode))
