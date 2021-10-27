@@ -3,11 +3,11 @@
 def gamemode():
     i = False
     while not i:
-        gamemode_user = input("What gamemode would you like to select, 'hard' or 'easy'? ")
-        gamemode_user = gamemode_user.strip().lower()
-        if gamemode_user == "hard":
+        gamemode = input("What gamemode would you like to select, 'hard' or 'easy'? ")
+        gamemode = gamemode.strip().lower()
+        if gamemode == "hard":
             i = True
-        elif gamemode_user == "easy":
+        elif gamemode == "easy":
             i = True
         else:
             print("Please input")
