@@ -73,14 +73,14 @@ normal_questions = ["What creatures (plural) forged the Gryffindor sword?\n",
                     "How many times did Gryffindor win the House Cup throughout the books?\n"]
 
 # Easy Questions
-easy_questions = ["What is the name of the spell that gave Harry Potter the scar on his forehead?\n",
-                  "What house did Harry Potter get sorted into?\n",
-                  "What is the REAL name of the Dark Lord?\n",
-                  "What teacher at Hogwarts was a werewolf (full name)?\n",
-                  "What is the name of the wizardring town outside of Hogwarts?\n",
-                  "What character was in love with Lily Potter (full name)?\n",
-                  "What subject did Albus Dumbledoor teach before becoming headmaster?\n",
-                  "What book number has the highest word count?\n"]
+easy_questions = ["What is the name of the spell that gave Harry Potter the scar on his forehead? \n",
+                  "What house did Harry Potter get sorted into? \n",
+                  "What is the REAL name of the Dark Lord? \n",
+                  "What teacher at Hogwarts was a werewolf (full name)? \n",
+                  "What is the name of the wizardring town outside of Hogwarts? \n",
+                  "What character is in love with Lily Potter that is not part of her family (full name)? \n",
+                  "What subject did Albus Dumbledoor teach before becoming headmaster? \n",
+                  "What book number has the highest word count? \n"]
 
 # Hard Answers
 hard_answers = ["Never tickle a sleeping dragon",
@@ -123,7 +123,7 @@ gamemode_options = ["Easy", "Normal", "Hard"]
 
 i = False
 while not i:
-    gamemode = input("\nWhat difficulty would you like to select? The options are: {}".format(gamemode_options))
+    gamemode = input("\nWhat difficulty would you like to select? The options are: {} ".format(gamemode_options))
     gamemode = gamemode.strip().lower()
     if gamemode == "hard":
         i = True
