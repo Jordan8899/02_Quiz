@@ -21,7 +21,12 @@ def yes_no(question):
 def instructions():
     print("\n***** How to play *****")
     print("")
-    print("Instructions go here")
+    print("This quiz is based on the world of Harry Potter. \n"
+          "it involves parts of the Harry Potter books and movies as well as fantastic beasts and where to find them.\n"
+          "After these instructions you will be asked to select a gamemode, you may type 'easy', 'normal', or 'hard'.\n"
+          "After choosing one of the gamemodes you will be given random questions based on the difficulty you selected.\n"
+          "You must type all answers correctly spelled.\n"
+          "Good luck and have fun")
     print("")
     print("***********************")
     return ""
@@ -34,7 +39,7 @@ def randomizer():
 def statement_decoration(statement, decoration):
 
     # How much decoration is on either side of the statement
-    sides = decoration * 0
+    sides = decoration * 3
 
     # Defines where the sides and statement are
     statement = "{} {} {}".format(sides, statement, sides)
@@ -107,14 +112,18 @@ easy_answers = ["Avada Kedavra",
                 "5"]
 
 # Main routine
+print("*** Welcome to the world of magic *** \n")
+
 played_before = yes_no("Have you played this game before? ")
 
 if played_before == "no":
     instructions()
 
+gamemode_options = ["Easy", "Normal", "Hard"]
+
 i = False
 while not i:
-    gamemode = input("\nWhat gamemode would you like to select? ")
+    gamemode = input("\nWhat difficulty would you like to select? The options are: {}".format(gamemode_options))
     gamemode = gamemode.strip().lower()
     if gamemode == "hard":
         i = True
@@ -161,13 +170,13 @@ while len(questions) > 0:
 if gamemode == "easy":
     true_wizard = "You have been accepted to join Hogwarts school for witchcraft and wizardry"
 elif gamemode == "normal":
-    true_wizard = "You are as legendary as Harry Potter"
+    true_wizard = "You are as legendary as the Harry Potter"
 elif gamemode == "hard":
     true_wizard = "You are a true legendary master of magic"
 
 # Score and gamemode based response to how well the user performed in the quiz
 if score == 8:
-    statement_decoration("\nCongratulations you got a perfect score {} out of 8 on {} mode. {}".format(score, gamemode, true_wizard))
+    statement_decoration("Congratulations you got a perfect score {} out of 8 on {} mode. {}".format(score, gamemode, true_wizard), "*")
 
 else:
-    statement_decoration("\nYou got {} out of 8 on the {} difficulty. You did okay for a Muggle".format(score, gamemode), "*")
+    statement_decoration("You got {} out of 8 on the {} difficulty. You did okay for a Muggle".format(score, gamemode), "#")
