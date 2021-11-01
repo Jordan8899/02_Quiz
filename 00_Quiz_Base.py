@@ -19,16 +19,19 @@ def yes_no(question):
             print("Please enter either \"Yes\" or \"No\"")
 
 def instructions():
-    print("\n***** How to play *****")
+    print("\n*****                                           How to play                                           *****")
     print("")
-    print("This quiz is based on the world of Harry Potter. \n"
-          "it involves parts of the Harry Potter books and movies as well as fantastic beasts and where to find them.\n"
-          "After these instructions you will be asked to select a gamemode, you may type 'easy', 'normal', or 'hard'.\n"
-          "After choosing one of the gamemodes you will be given random questions based on the difficulty you selected.\n"
-          "You must type all answers correctly spelled.\n"
-          "Good luck and have fun")
+    print("                              This quiz is based on the world of Harry Potter. \n"
+          "                           it involves parts of the Harry Potter books and movies.\n"
+          "                  Fantastic beasts and where to find them has also got a part in this quiz.\n"
+          "                     After these instructions you will be asked to select a gamemode,\n"
+          "                               you may type 'easy', 'normal', or 'hard'.\n"
+          "                    After choosing one of the gamemodes you will be given random questions\n"
+          "                                      based on the difficulty you selected.\n"
+          "                                   You must type all answers correctly spelled.\n"
+          "                                             Good luck and have fun")
     print("")
-    print("***********************")
+    print("*****                                                                                                 *****")
     return ""
 
 def randomizer():
