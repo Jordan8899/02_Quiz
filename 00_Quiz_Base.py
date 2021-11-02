@@ -35,6 +35,7 @@ def instructions():
     return ""
 
 def randomizer():
+    # This randomizes all the questions
     questions_amount = len(questions) - 1
     randomized_number = random.randint(0, questions_amount)
     return[questions[randomized_number], answers[randomized_number], printed_answer[randomized_number]]
@@ -54,7 +55,7 @@ def statement_decoration(statement, decoration):
     print(top_bottom)
 
     return ""
-
+# Questions and Answers lists
 # Hard Questions
 hard_questions = ["What is the motto of Hogwarts school for witchcraft and wizarding (in English)?\n",
                   "What ghost is missing from the movies that appears in the books?\n",
@@ -117,13 +118,17 @@ easy_answers = ["Avada Kedavra",
 # Main routine
 print("*** Welcome to the world of magic *** \n")
 
+# Asks the user if they have played the game before
 played_before = yes_no("Have you played this game before? ")
 
+# If the user says they have not played the game before it displays the instructions
 if played_before == "no":
     instructions()
 
+# This is a list that will tell the user when printed all the choices they have
 gamemode_options = ["Easy", "Normal", "Hard"]
 
+# This asks the user what difficulty they would like to play, will not accept the answer until one of the options is inputted
 i = False
 while not i:
     gamemode = input("\nWhat difficulty would you like to select? The options are: {} ".format(gamemode_options))
@@ -166,18 +171,19 @@ while len(questions) > 0:
     elif guess != randomized[1]:
         print("Incorrect, the correct answer is {}\n".format((randomized[2])))
     round_number += 1
+    # Removes the randomized question and answer from the list so that it doesn't reuse the same questions and answers
     questions.remove(randomized[0])
     answers.remove(randomized[1])
 
-# Based Response depending on gamemode
+# Based Response to their skill depending on difficulty
 if gamemode == "easy":
     true_wizard = "You have been accepted to join Hogwarts school for witchcraft and wizardry"
 elif gamemode == "normal":
-    true_wizard = "You are as legendary as the Harry Potter"
+    true_wizard = "You are as legendary as Harry Potter"
 elif gamemode == "hard":
-    true_wizard = "You are a true legendary master of magic"
+    true_wizard = "You are a true master of magic"
 
-# Score and gamemode based response to how well the user performed in the quiz
+# Score and difficulty based response to how well the user performed in the quiz
 if score == 8:
     statement_decoration("Congratulations you got a perfect score {} out of 8 on {} mode. {}".format(score, gamemode, true_wizard), "*")
 
