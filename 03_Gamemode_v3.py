@@ -1,19 +1,28 @@
 
 # Select Game Mode
 def gamemode():
-    i = False
-    while not i:
-        gamemode = input("What gamemode would you like to select, 'hard' or 'easy'? ")
-        gamemode = gamemode.strip().lower()
+    i = True
+    while i:
+        gamemode = input("\nWhat difficulty would you like to select? The options are: {} ".format(gamemode_options))
+        gamemode = gamemode.replace(" ", "").lower()
         if gamemode == "hard":
-            i = True
-        elif gamemode == "easy":
-            i = True
-        else:
-            print("Please input")
             i = False
-gamemode()
+        elif gamemode == "easy":
+            i = False
+        elif gamemode == "normal":
+            i = False
+        else:
+            print("Please input either 'easy', 'normal', or 'hard'")
 
-print(gamemode)
 
-# This is broken use the 05_Questions_v2 instead
+gamemode_options = ["Easy", "Normal", "Hard"]
+
+# Try and fix it
+if gamemode == "hard":
+    print("Hard")
+elif gamemode == "normal":
+    print("Normal")
+elif gamemode == "easy":
+    print("Easy")
+else:
+    print("{}".format(gamemode))

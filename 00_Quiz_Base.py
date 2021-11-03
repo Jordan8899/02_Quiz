@@ -7,11 +7,12 @@ def yes_no(question):
     while not valid:
         response = input(question).lower().strip()
 
+    # If they say yes, program asks first question
         if response == "yes" or response == "y":
             response = "yes"
             return response
 
-    # If they say no, output 'display instructions'
+    # If they say no, output displays instructions'
         elif response == "no" or response == "n":
             response = "no"
             return response
@@ -132,7 +133,7 @@ gamemode_options = ["Easy", "Normal", "Hard"]
 i = False
 while not i:
     gamemode = input("\nWhat difficulty would you like to select? The options are: {} ".format(gamemode_options))
-    gamemode = gamemode.strip().lower()
+    gamemode = gamemode.replace(" ", "").lower()
     if gamemode == "hard":
         i = True
     elif gamemode == "easy":
