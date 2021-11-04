@@ -1,28 +1,31 @@
-
 # Select Game Mode
 def gamemode():
-    i = True
-    while i:
+    # Starts while not loop by defining i as False
+    i = False
+    while not i:
+        # Stores users input on difficulty they would like to select as gamemode and prints options
         gamemode = input("\nWhat difficulty would you like to select? The options are: {} ".format(gamemode_options))
+        # This makes it so that any spaces in the code get replaced while also lowering any capitalization.
         gamemode = gamemode.replace(" ", "").lower()
+
+        # Returns users input if they inputted hard
         if gamemode == "hard":
-            i = False
+            return gamemode
+
+        # Returns users input if they inputted easy
         elif gamemode == "easy":
-            i = False
+            return gamemode
+
+        # Returns users input if they inputted normal
         elif gamemode == "normal":
-            i = False
+            return gamemode
+
+        # If user inputs anything other than easy, normal or hard continues loop asking user to input valid inputs
         else:
-            print("Please input either 'easy', 'normal', or 'hard'")
+            print("Please input either {}".format(gamemode_options))
 
-
+# Defines the difficulty options available
 gamemode_options = ["Easy", "Normal", "Hard"]
 
-# Try and fix it
-if gamemode == "hard":
-    print("Hard")
-elif gamemode == "normal":
-    print("Normal")
-elif gamemode == "easy":
-    print("Easy")
-else:
-    print("{}".format(gamemode))
+# Defines the users input as difficulty
+difficulty = gamemode()

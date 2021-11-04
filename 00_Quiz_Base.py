@@ -35,6 +35,24 @@ def instructions():
     print("*****                                                                 *****")
     return ""
 
+def gamemode():
+    i = False
+    while not i:
+        gamemode = input("\nWhat difficulty would you like to select? The options are: {} ".format(gamemode_options))
+        gamemode = gamemode.replace(" ", "").lower()
+
+        if gamemode == "hard":
+            return gamemode
+
+        elif gamemode == "easy":
+            return gamemode
+
+        elif gamemode == "normal":
+            return gamemode
+
+        else:
+            print("Please input either 'easy', 'normal', or 'hard'")
+
 def randomizer():
     # This randomizes all the questions
     questions_amount = len(questions) - 1
@@ -129,33 +147,21 @@ if played_before == "no":
 # This is a list that will tell the user when printed all the choices they have
 gamemode_options = ["Easy", "Normal", "Hard"]
 
-# This asks the user what difficulty they would like to play, will not accept the answer until one of the options is inputted
-i = False
-while not i:
-    gamemode = input("\nWhat difficulty would you like to select? The options are: {} ".format(gamemode_options))
-    gamemode = gamemode.replace(" ", "").lower()
-    if gamemode == "hard":
-        i = True
-    elif gamemode == "easy":
-        i = True
-    elif gamemode == "normal":
-        i = True
-    else:
-        print("Please input either 'easy', 'normal', or 'hard'")
-        i = False
+# Makes the gamemode function work by creating a variable of the input the user gives
+difficulty = gamemode()
 
 # Question Selection
-if gamemode == "hard":
+if difficulty == "hard":
     questions = hard_questions
     answers = hard_answers
     printed_answer = hard_answers
 
-elif gamemode == "normal":
+elif difficulty == "normal":
     questions = normal_questions
     answers = normal_answers
     printed_answer = normal_answers
 
-elif gamemode == "easy":
+elif difficulty == "easy":
     questions = easy_questions
     answers = easy_answers
     printed_answer = easy_answers
@@ -177,16 +183,16 @@ while len(questions) > 0:
     answers.remove(randomized[1])
 
 # Based Response to their skill depending on difficulty
-if gamemode == "easy":
+if difficulty == "easy":
     true_wizard = "You have been accepted to join Hogwarts school for witchcraft and wizardry"
-elif gamemode == "normal":
+elif difficulty == "normal":
     true_wizard = "You are as legendary as Harry Potter"
-elif gamemode == "hard":
+elif difficulty == "hard":
     true_wizard = "You are a true master of magic"
 
 # Score and difficulty based response to how well the user performed in the quiz
 if score == 8:
-    statement_decoration("Congratulations you got a perfect score {} out of 8 on {} mode. {}".format(score, gamemode, true_wizard), "*")
+    statement_decoration("Congratulations you got a perfect score {} out of 8 on {} mode. {}".format(score, difficulty, true_wizard), "*")
 
 else:
-    statement_decoration("You got {} out of 8 on the {} difficulty. You did okay for a Muggle".format(score, gamemode), "#")
+    statement_decoration("You got {} out of 8 on the {} difficulty. You did okay for a Muggle".format(score, difficulty), "#")
