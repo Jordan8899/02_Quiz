@@ -51,24 +51,26 @@ gamemode_options = ["Easy", "Normal", "Hard"]
 # Defines the users input as difficulty
 difficulty = gamemode()
 
-# Question Selection
-if gamemode == "hard":
+# Question Selection defines variable dependant on difficulty selected
+if difficulty == "hard":
     questions = hard_questions
     answers = hard_answers
 
-elif gamemode == "normal":
+elif difficulty == "normal":
     questions = normal_questions
     answers = normal_answers
 
-elif gamemode == "easy":
+elif difficulty == "easy":
     questions = easy_questions
     answers = easy_answers
 
+# len defines the amount of questions are left in the list and then this removes each question after being printed
 while len(questions) > 0:
     guess = input(questions[0])
-    if guess == answers[0]:
+    guess = guess.replace(" ", "")
+    if guess == answers[0].lower().replace(" ", ""):
         print("Correct")
-        questions.remove(questions[0])
-        answers.remove(answers[0])
     else:
         print("Incorrect")
+    questions.remove(questions[0])
+    answers.remove(answers[0])
