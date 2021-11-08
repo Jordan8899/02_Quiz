@@ -141,7 +141,7 @@ elif difficulty == "hard":
 
 # Score and gamemode based response to how well the user performed in the quiz
 if score == 8:
-    print("\nCongratulations you got a perfect score {} out of 8 on {} mode. {}".format(score, gamemode, true_wizard))
+    print("\nCongratulations you got a perfect score {} out of 8 on {} mode. {}".format(score, difficulty, true_wizard))
 
 else:
-    print("\nYou got {} out of 8 on the {} difficulty. You did magical".format(score, gamemode))
+    print("\nYou got {} out of 8 on the {} difficulty. You did magical".format(score, difficulty))
