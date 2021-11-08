@@ -2,7 +2,7 @@
 import random
 score = 0
 round_number = 1
-
+gamemode_options = ["Hard", "Normal", "Easy"]
 # Functions
 
 def gamemode():
